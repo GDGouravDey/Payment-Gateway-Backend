@@ -1,7 +1,6 @@
 package database;
 
 import java.sql.Connection;
-import java.sql.SQLOutput;
 import java.sql.Statement;
 
 public class DBManager {
