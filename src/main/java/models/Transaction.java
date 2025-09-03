@@ -35,7 +35,7 @@ public class Transaction {
         this.status = status;
         this.prevBalance = prevBalance;
         this.newBalance = newBalance;
-        this.failureReason = failureReason;  // ADDED: Missing field
+        this.failureReason = failureReason;
         this.creationTime = creationTime;
         this.processedTime = processedTime;
     }

@@ -39,8 +39,7 @@ public class TransactionDataAccess {
                 ps.setNull(7, java.sql.Types.DECIMAL);
             }
 
-            // Handle failure reason - can be null
-            ps.setString(8, transaction.getFailureReason()); // This can be null, it's fine
+            ps.setString(8, transaction.getFailureReason());
 
             // Convert Instant to Timestamp
             ps.setTimestamp(9, transaction.getCreationTime() != null ?
