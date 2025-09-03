@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.Timestamp;
 import java.time.Instant;
 
+import models.Transaction;
 import models.User;
 import models.User.Currency;
 

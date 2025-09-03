@@ -1,5 +1,6 @@
 package services;
 
+import database.TransactionDataAccess;
 import database.UserDataAccess;
 import models.Transaction;
 import models.User;
@@ -12,11 +13,13 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class PaymentService {
     private final UserDataAccess userDA;
+    private final TransactionDataAccess transactionDA;
     private final TransactionQueue queue;
     private final ConcurrentHashMap<String, String> idCache;
 
     public PaymentService() {
         this.userDA = new UserDataAccess();
+        this.transactionDA = new TransactionDataAccess();
         this.queue = TransactionQueue.getInstance();
         this.idCache = new ConcurrentHashMap<>();
     }
@@ -129,6 +132,7 @@ public class PaymentService {
         transaction.setNewBalance(newBalance);
         transaction.setStatus(Transaction.TransactionStatus.COMPLETED);
         transaction.setProcessedTime(Instant.now());
+        transactionDA.insertTransaction(transaction);
     }
 
     private Transaction createTransaction(String transactionId, String accountId, BigDecimal amount, Transaction.TransactionType type, String idempotencyKey) {

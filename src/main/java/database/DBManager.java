@@ -71,6 +71,7 @@ public class DBManager {
                     status ENUM('PENDING', 'PROCESSING', 'COMPLETED', 'FAILED', 'RETRYING') NOT NULL DEFAULT 'PENDING',
                     prev_balance DECIMAL(19,2),
                     new_balance DECIMAL(19,2),
+                    failure_reason TEXT,
                     creation_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
                     processed_time TIMESTAMP NULL,
                     FOREIGN KEY (account_id) REFERENCES users(user_id)

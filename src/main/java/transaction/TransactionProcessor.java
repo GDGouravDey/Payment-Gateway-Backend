@@ -47,7 +47,6 @@ public class TransactionProcessor {
                     } catch (Exception e) {
                         System.err.println("Transaction failed: " + transaction.getTransactionId() + " - " + e.getMessage());
                         transaction.setStatus(Transaction.TransactionStatus.FAILED);
-                        transaction.setFailureReason(e.getMessage());
                     }
                 }
             } catch (InterruptedException e) {

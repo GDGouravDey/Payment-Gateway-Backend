@@ -18,13 +18,16 @@ public class Transaction {
     private TransactionStatus status;
     private BigDecimal prevBalance;
     private BigDecimal newBalance;
-    private String failureReason;
+    private String failureReason;  // ADDED: Missing field
     private Instant creationTime;
     private Instant processedTime;
 
     public Transaction() {}
 
-    public Transaction(String transactionId, String accountId, BigDecimal amount, TransactionType type, TransactionStatus status, BigDecimal prevBalance, BigDecimal newBalance, String failureReason, Instant creationTime, Instant processedTime) {
+    public Transaction(String transactionId, String accountId, BigDecimal amount,
+                       TransactionType type, TransactionStatus status, BigDecimal prevBalance,
+                       BigDecimal newBalance, String failureReason, Instant creationTime,
+                       Instant processedTime) {
         this.transactionId = transactionId;
         this.accountId = accountId;
         this.amount = amount;
@@ -32,11 +35,12 @@ public class Transaction {
         this.status = status;
         this.prevBalance = prevBalance;
         this.newBalance = newBalance;
-        this.failureReason = failureReason;
+        this.failureReason = failureReason;  // ADDED: Missing field
         this.creationTime = creationTime;
         this.processedTime = processedTime;
     }
 
+    // Getters and Setters
     public String getTransactionId() {
         return transactionId;
     }
@@ -93,6 +97,7 @@ public class Transaction {
         this.newBalance = newBalance;
     }
 
+    // ADDED: Missing getter and setter for failureReason
     public String getFailureReason() {
         return failureReason;
     }
