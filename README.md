@@ -8,7 +8,7 @@ A robust Java-based payment gateway system with MySQL database integration, feat
 - **Transaction Processing**: Secure deposits and withdrawals with queue-based processing  
 - **Idempotency Protection**: Prevent duplicate transactions using unique keys  
 - **Multi-threaded Processing**: Concurrent transaction handling with thread pool  
-- **Database Integration**: MySQL with automatic schema creation  
+- **Database Integration**: MySQL for reliable user and transaction persistence
 - **Error Handling**: Robust exception management
 
 ## Setup
